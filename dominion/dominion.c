@@ -103,33 +103,22 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   state->supplyCount[gold] = 30;
 
   //set number of Kingdom cards
-  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
-    {
-      for (j = 0; j < 10; j++)           		//loop chosen cards
-	{
-	  if (kingdomCards[j] == i)
-	    {
+  for (i = adventurer; i <= treasure_map; i++) {      	//loop all cards
+	for (j = 0; j < 10; j++) {     		//loop chosen cards
+	  if (kingdomCards[j] == i){
 	      //check if card is a 'Victory' Kingdom card
-	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
-		{
-		  if (numPlayers == 2){ 
-		    state->supplyCount[i] = 8; 
+	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens) {
+			if (numPlayers == 2){ state->supplyCount[i] = 8; }
+			else{ state->supplyCount[i] = 12; }
 		  }
-		  else{ state->supplyCount[i] = 12; }
-		}
-	      else
-		{
-		  state->supplyCount[i] = 10;
-		}
+	      else { state->supplyCount[i] = 10; }
 	      break;
-	    }
-	  else    //card is not in the set choosen for the game
-	    {
-	      state->supplyCount[i] = -1;
-	    }
+	  } else {
+		  //card is not in the set choosen for the game
+		  state->supplyCount[i] = -1; 
+	  }
 	}
-
-    }
+  }
 
   ////////////////////////
   //supply intilization complete
@@ -271,8 +260,8 @@ int playCard(int handPos, int choice1, int choice2, int choice3, struct gameStat
 
 int buyCard(int supplyPos, struct gameState *state) {
   int who;
-  if (DEBUG){
-    printf("Entering buyCard...\n");
+  if (DEBUG) {
+	  printf("Entering buyCard...\n");
   }
 
   // I don't know what to do about the phase thing.
@@ -280,15 +269,15 @@ int buyCard(int supplyPos, struct gameState *state) {
   who = state->whoseTurn;
 
   if (state->numBuys < 1){
-    if (DEBUG)
+	  if (DEBUG)
       printf("You do not have any buys left\n");
     return -1;
   } else if (supplyCount(supplyPos, state) <1){
-    if (DEBUG)
+	  if (DEBUG)
       printf("There are not any of that type of card left\n");
     return -1;
   } else if (state->coins < getCost(supplyPos)){
-    if (DEBUG) 
+	  if (DEBUG)
       printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
     return -1;
   } else {
@@ -298,7 +287,7 @@ int buyCard(int supplyPos, struct gameState *state) {
   
     state->coins = (state->coins) - (getCost(supplyPos));
     state->numBuys--;
-    if (DEBUG)
+	if (DEBUG)
       printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
   }
 
