@@ -1,0 +1,95 @@
+Result for running BST tests:
+unittest1.c:
+
+This set of tests should PASS
+COUNT TEST PASSED: COIN COUNT (COPPER) MATCHED
+COUNT TEST PASSED: COIN COUNT (SILVER) MATCHED
+COUNT TEST PASSED: COIN COUNT (GOLD) MATCHED
+COUNT TEST PASSED: COIN COUNT (GOLD+B) MATCHED
+TREASURE-ONLY TEST PASSED: COIN COUNT (COPPER) MATCHED
+
+This set of tests should FAIL
+COUNT TEST FAILED: COIN COUNT (COPPER) DID NOT MATCH
+	COUNT WAS 5, should have been 6
+COUNT TEST FAILED: COIN COUNT (SILVER) DID NOT MATCH
+	COUNT WAS 10, should have been 9
+COUNT TEST FAILED: COIN COUNT (GOLD) DID NOT MATCH
+	COUNT WAS 15, should have been 16
+COUNT TEST FAILED: COIN COUNT (GOLD+B) DID NOT MATCH
+	COUNT WAS 18, should have been 17
+TREASURE-ONLY TEST FAILED: COIN COUNT (COPPER) DID NOT MATCH
+	COUNT WAS 6, should have been 5
+File 'dominion.c'
+Lines executed:16.19% of 556
+Branches executed:15.83% of 417
+Taken at least once:13.43% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+BUY TEST PASSED: No errors found
+File 'dominion.c'
+Lines executed:19.96% of 556
+Branches executed:25.42% of 417
+Taken at least once:14.63% of 417
+Calls executed:12.63% of 95
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+DECK COUNT TEST PASSED: No errors found
+File 'dominion.c'
+Lines executed:17.27% of 556
+Branches executed:18.23% of 417
+Taken at least once:15.11% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+WHOSE TURN PASSED: No errors found
+File 'dominion.c'
+Lines executed:16.19% of 556
+Branches executed:15.83% of 417
+Taken at least once:12.95% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+ADVENTURER FAILED: Incorrect number of cards drawn or adventurer was not discarded. Was 5, is now 8
+File 'dominion.c'
+Lines executed:19.42% of 556
+Branches executed:23.26% of 417
+Taken at least once:14.63% of 417
+Calls executed:10.53% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+SMITHY  FAILED: Card was not discarded. Possibly trashed or remains in hand
+File 'dominion.c'
+Lines executed:20.32% of 556
+Branches executed:23.26% of 417
+Taken at least once:14.63% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+VILLAGE FAILED: Incorrect number of actions granted to player. Was 1, is now 1
+VILLAGE FAILED: Incorrect number of discards. Discard deck was 0, is now 0
+File 'dominion.c'
+Lines executed:20.68% of 556
+Branches executed:22.78% of 417
+Taken at least once:14.15% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+CUTPURSE FAILED: Coins were not appropriately added to player. Was 3, is now 4
+CUTPURSE FAILED: Copper was not removed from player's hand
+CUTPURSE FAILED: Other player did not discard their copper
+CUTPURSE FAILED: Other player's discard pile did not increase properly
+File 'dominion.c'
+Lines executed:21.04% of 556
+Branches executed:24.22% of 417
+Taken at least once:15.35% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
